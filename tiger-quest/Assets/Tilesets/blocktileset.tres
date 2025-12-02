@@ -1,0 +1,56 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://oq2p2pxhpsja"]
+
+[ext_resource type="Texture2D" uid="uid://b1ob0l08l0w0a" path="res://Assets/Sprites/TestAlphabetBlocksSmaller.png" id="1_3txm7"]
+[ext_resource type="Texture2D" uid="uid://ybju74ewv58x" path="res://Assets/Sprites/LogSpriteSheet.png" id="2_r8581"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_crih0"]
+texture = ExtResource("1_3txm7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vp1c6"]
+texture = ExtResource("2_r8581")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, -8, 16, -8, 16, 0, -16, 0, -16, -8)
+0:0/0/physics_layer_1/polygon_0/one_way = true
+1:0/0 = 0
+1:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, -8, 16, -8, 16, 0, -16, 0, -16, -8)
+1:0/0/physics_layer_1/polygon_0/one_way = true
+2:0/0 = 0
+2:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, -8, 16, -8, 16, 0, -16, 0, -16, -8)
+2:0/0/physics_layer_1/polygon_0/one_way = true
+3:0/0 = 0
+3:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, -8, 16, -8, 16, 0, -16, 0, -16, -8)
+3:0/0/physics_layer_1/polygon_0/one_way = true
+4:0/0 = 0
+4:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, -8, 16, -8, 16, 0, -16, 0, -16, -8)
+4:0/0/physics_layer_1/polygon_0/one_way = true
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 256
+physics_layer_1/collision_layer = 512
+sources/0 = SubResource("TileSetAtlasSource_crih0")
+sources/1 = SubResource("TileSetAtlasSource_vp1c6")

@@ -558,7 +558,7 @@ transitions = ["RunningMachine", "airborn", SubResource("AnimationNodeStateMachi
 size = Vector2(61, 54)
 
 [node name="Tiger" type="CharacterBody2D"]
-collision_mask = 256
+collision_mask = 769
 script = ExtResource("1_0l5ro")
 projectile_prefab = ExtResource("2_0x0vy")
 projectile_offset = Vector2(-52, -27)

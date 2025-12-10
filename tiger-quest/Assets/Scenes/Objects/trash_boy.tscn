@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://brwkqb301sd1k"]
+[gd_scene load_steps=14 format=3 uid="uid://brwkqb301sd1k"]
 
 [ext_resource type="Script" uid="uid://dsrgblnb56bx1" path="res://Assets/Scripts/trashboy.gd" id="1_i7s4p"]
 [ext_resource type="Texture2D" uid="uid://b5m7qc7l7r0di" path="res://Assets/Sprites/TrashBoy/TrashBoyBodyBehind.png" id="1_ly0ef"]
+[ext_resource type="PackedScene" uid="uid://b6qihiw6g2tgu" path="res://Assets/Scenes/Objects/trash_projectile.tscn" id="2_gwhbo"]
 [ext_resource type="Texture2D" uid="uid://ctyjrfei45it6" path="res://Assets/Sprites/TrashBoy/TrashBoyFace.png" id="2_i7s4p"]
 [ext_resource type="Texture2D" uid="uid://1nh03cswfirw" path="res://Assets/Sprites/TrashBoy/TrashBoyBody.png" id="3_gwhbo"]
 [ext_resource type="Texture2D" uid="uid://bdhk7by4eh13o" path="res://Assets/Sprites/TrashBoy/TrashBoyHat.png" id="4_qoquj"]
@@ -159,6 +160,7 @@ radius = 301.12457
 
 [node name="TrashBoy" type="Node2D"]
 script = ExtResource("1_i7s4p")
+ProjectilePrefab = ExtResource("2_gwhbo")
 
 [node name="Scalar" type="Node2D" parent="."]
 position = Vector2(2, -44)
@@ -183,6 +185,10 @@ libraries = {
 
 [node name="MonitorZone" type="Area2D" parent="."]
 position = Vector2(0, -62)
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MonitorZone"]
 shape = SubResource("CircleShape2D_i7s4p")
+
+[connection signal="body_entered" from="MonitorZone" to="." method="_on_monitor_zone_body_entered"]
+[connection signal="body_exited" from="MonitorZone" to="." method="_on_monitor_zone_body_exited"]

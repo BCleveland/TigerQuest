@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://brwkqb301sd1k"]
+[gd_scene load_steps=15 format=3 uid="uid://brwkqb301sd1k"]
 
 [ext_resource type="Script" uid="uid://dsrgblnb56bx1" path="res://Assets/Scripts/trashboy.gd" id="1_i7s4p"]
 [ext_resource type="Texture2D" uid="uid://b5m7qc7l7r0di" path="res://Assets/Sprites/TrashBoy/TrashBoyBodyBehind.png" id="1_ly0ef"]
@@ -158,6 +158,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_i7s4p"]
 radius = 301.12457
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwhbo"]
+size = Vector2(45, 83)
+
 [node name="TrashBoy" type="Node2D"]
 script = ExtResource("1_i7s4p")
 ProjectilePrefab = ExtResource("2_gwhbo")
@@ -191,6 +194,14 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MonitorZone"]
 shape = SubResource("CircleShape2D_i7s4p")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-0.5, -44)
+shape = SubResource("RectangleShape2D_gwhbo")
 
 [connection signal="body_entered" from="MonitorZone" to="." method="_on_monitor_zone_body_entered"]
 [connection signal="body_exited" from="MonitorZone" to="." method="_on_monitor_zone_body_exited"]

@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var Health: int = 2
 @export var ProjectilePrefab: PackedScene
 @export var RaiseTime: float = 0.5
 @export var LowerSpriteHeight: float = 120
@@ -36,6 +37,11 @@ func _process(delta: float) -> void:
 			raisePercent -= 1/RaiseTime*delta
 	faceSprite.position.y = lerpf(LowerSpriteHeight, 0, raisePercent)
 	hatSprite.position.y = lerpf(LowerSpriteHeight, 0, raisePercent)
+
+func TakeDamage(amount: int):
+	Health -= amount
+	if(Health <= 0):
+		queue_free()
 
 func _on_monitor_zone_body_entered(body: Node2D) -> void:
 	if(overlappingBody != null):

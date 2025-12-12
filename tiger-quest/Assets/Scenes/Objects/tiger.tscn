@@ -566,6 +566,8 @@ jump_amount = 11.0
 coyote_time = 0.2
 jump_hold_time = 0.25
 jump_hold_amount = 32.0
+MaxHealth = 150
+KnockbackForce = Vector2(6, -4)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -71.62)

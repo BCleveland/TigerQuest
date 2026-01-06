@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6qihiw6g2tgu"]
+[gd_scene load_steps=5 format=3 uid="uid://b6qihiw6g2tgu"]
 
 [ext_resource type="Script" uid="uid://d1o723xgmggh2" path="res://Assets/Scripts/trash_projectile.gd" id="1_0dstj"]
-[ext_resource type="Texture2D" uid="uid://d2ysvk380f0ao" path="res://Assets/Sprites/RoarSprite.png" id="1_66l1u"]
+[ext_resource type="Texture2D" uid="uid://c0qdvh3shjnwu" path="res://Assets/Sprites/TrashBoy/ChickenWing.png" id="2_4t5li"]
+[ext_resource type="Script" uid="uid://qugofwimg7e7" path="res://Assets/Scripts/rotator.gd" id="3_4t5li"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0dstj"]
 radius = 28.0
@@ -10,13 +11,18 @@ radius = 28.0
 script = ExtResource("1_0dstj")
 Speed = 250.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_66l1u")
-
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_0dstj")
+
+[node name="SpriteScalar" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteScalar"]
+scale = Vector2(0.46875, 0.46875)
+texture = ExtResource("2_4t5li")
+script = ExtResource("3_4t5li")
+speed = 180
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
